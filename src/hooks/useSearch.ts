@@ -6,7 +6,7 @@ export const useSearch = (searchText: string) => {
     queryKey: ['search', searchText],
     queryFn: async ({ pageParam = 1 }) => {
       const response = await axios.get(
-        `http://localhost:3005/search?searchText=${searchText}&page=${pageParam}`
+        `http://spotter-backend-lb-1870677625.us-west-2.elb.amazonaws.com/search?searchText=${searchText}&page=${pageParam}`
       );
       return response.data;
     },
